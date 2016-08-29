@@ -709,6 +709,8 @@ let let_ref r v f =
   | result -> r := v'; result
   | exception exn -> r := v'; raise exn
 
+let failwithf fmt = Printf.ksprintf failwith fmt
+
 module Shell = struct
   (* FIXME: Simply split on spaces *)
   let split_command str =
